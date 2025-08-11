@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&family=Creepster&family=Bangers&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Socabaya Turismo</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: Arial, Helvetica;
+    }
+    body::before {
+  content: "";
+  background: url('toros/1.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  filter: brightness(0.6);
+}
+
+    .fullscreen-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: contain; /* Cambia a 'contain' si quieres ver todo el video , cover , fill */
+      z-index: -1;
+    }
+        /* Texto animado */
+        h1 {
+      color: aliceblue;
+      font-family: 'Fredoka One', cursive;
+      font-size: 60px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      margin-top: 100px;
+      text-shadow:
+        0 0 5px red,
+        0 0 10px orange,
+        0 0 20px yellow,
+        0 0 40px orange,
+        0 0 60px red;
+      animation: flame 1s infinite alternate;
+    }
+
+    @keyframes flame {
+      0%, 30% {
+        text-shadow:
+          0 0 5px black,
+          0 0 10px white,
+          0 0 20px yellow;
+      }
+      50%, 100% {
+        text-shadow:
+          0 0 10px black,
+          0 0 20px white,
+          0 0 40px whitesmoke;
+      }
+    }
+
+
+    .fire-text {
+      font-family: 'Times New Roman', serif;
+      font-size: 3em;
+      color: #ff4500;
+      text-align: center;
+      margin-top: 50px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .second-image {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 2;
+  
+    }
+   
+
+    /* Botón para activar el sonido */
+    .unmute-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 3;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  
+
+  <!-- Botón para activar el sonido -->
+  <button class="unmute-button" onclick="unmuteVideo()">🔊 Activar sonido</button>
+
+  <!-- Video de fondo -->
+  <video id="bg-video" autoplay loop class="fullscreen-bg" muted>
+    <source src="toros/2025-06-19-015252854.mp4" type="video/mp4">
+    Tu navegador no soporta la etiqueta de video.
+  </video>
+
+  <!-- Texto principal -->
+  <h1 class="fire-text">SOCABAYA ES TURISMO</h1>
+
+  <!-- Imagen en la esquina superior derecha -->
+  <div class="second-image">
+    <a href="TURISMO.html">
+        
+      <img src="toros/123.gif" width="300" height="200"  alt="Acceso al proyecto">
+      <h1>»»
+    </a>
+  </div>
+
+  <script>
+    const video = document.getElementById('bg-video');
+  
+    function updateVideoStyle() {
+      // Detectar si es móvil
+      const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  
+      if (isMobile) {
+        // En móviles, usar 'fill' para evitar bordes
+        video.style.objectFit = 'fill';
+      } else {
+        // En desktop, usar 'cover' para mejor calidad visual
+        video.style.objectFit = 'contein';
+      }
+    }
+  
+    // Aplicar estilo al cargar y al redimensionar
+    window.addEventListener('load', updateVideoStyle);
+    window.addEventListener('resize', updateVideoStyle);
+  
+    function unmuteVideo() {
+      video.muted = false;
+      video.play();
+      document.querySelector('.unmute-button').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>

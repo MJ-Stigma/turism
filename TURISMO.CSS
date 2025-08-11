@@ -1,0 +1,777 @@
+
+                                                                     /* Variables de color */
+        :root {
+            --primary: #8E6C3D; /* Tierra cocida */
+            --secondary: #4A7C59; /* Verde montaña */
+            --accent: #D4A059; /* Oro inca */
+            --light: #F5F5F5;
+            --dark: #333333;
+            --text: #444444;
+        }
+        
+                                                                     /* Reset y estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            
+        }
+       
+        
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+           
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+           
+        }
+
+        #lugares {
+            width: 100%;
+            background-image: url('atractivosturisticos/22.jpg');
+            background-size: contain;       /* 🔄 Muestra toda la imagen completa */
+            background-position: center;    /* Centra la imagen */
+            background-repeat: no-repeat;   /* No repite la imagen */
+            
+            padding: 40px 0;
+            color: black;
+          }
+
+          #eventos {
+            width: 100%;
+            background-image: url('atractivosturisticos/22.jpg');
+            background-size: contain;       /* 🔄 Muestra toda la imagen completa */
+            background-position: center;    /* Centra la imagen */
+            background-repeat: no-repeat;   /* No repite la imagen */
+            
+            padding: 40px 0;
+            color: black;
+          }
+
+        
+                                                                              /* Header */
+        header {
+            /*background-color: var(--primary);*/
+            background-color: rgba(8, 2, 2, 0.788);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.486);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            margin-right: 10px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+
+
+
+        
+                                                                        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('atractivosturisticos/123.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            
+        }
+        
+        .hero-content {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+       
+
+       
+        
+                                                                /* Secciones */
+        section {
+            padding: 80px 0;
+        }
+        
+        section:nth-child(even) {
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary);
+            color: black;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+        }
+        
+
+
+
+        /* Lugares destacados 
+        .lugares-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .lugar-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .lugar-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .lugar-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .lugar-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .lugar-card:hover .lugar-img img {
+            transform: scale(1.1);
+        }
+        
+        .lugar-content {
+            padding: 20px;
+        }
+        
+        .lugar-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        */
+
+        
+                                                              /* Gastronomía */
+        .gastronomia-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .plato-card {
+            width: 250px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .plato-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background-color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: var(--primary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .plato-card h3 {
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+        
+                                                              /* Eventos */
+        .eventos-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .eventos-timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--accent);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .evento {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .evento::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::after {
+            right: -12px;
+        }
+        
+        .right::after {
+            left: -12px;
+        }
+        
+        .evento-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+                                                                  /* Contacto */
+        .contacto-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+                                                                      /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+
+
+                                                                /* Ruleta */
+        .ruleta-container {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            height: 500px;
+            margin: 0 auto;
+            overflow: hidden;
+           
+        }
+        
+        
+        .ruleta {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s ease-in-out;
+            align-items: center;
+            
+        }
+        
+        .imagen-ruleta {
+            flex: 0 0 100%; /* No se encoge ni se expande, ocupa todo el ancho */
+            height: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            filter: grayscale(20%);
+            transition: filter 0.3s ease, transform 0.3s ease;
+            position: relative;
+            
+        }
+        
+        .imagen-ruleta.active {
+            filter: grayscale(0%);
+        }
+        
+        .imagen-ruleta img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        .ruleta:hover .imagen-ruleta {
+            transform: scale(1.05);
+            
+        }
+        
+                                                                          /* Controles */
+        .controles {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            z-index: 100;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #6e45e2, #88d3ce);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .ruleta-container {
+            height: 300px;
+            }
+        
+            .btn {
+            padding: 8px 16px;
+            font-size: 14px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .ruleta-container {
+            height: 250px;
+            }
+        }
+        
+
+
+                                                                         /* reseña de socabaya*/
+        /* Estilo general para la sección */
+            .contenido {
+            display: flex;
+            align-items: flex-start;
+            gap: 50px;
+            padding: 20px;
+            flex-wrap: wrap; /* Para que se acomode en pantallas pequeñas */
+            }
+
+            /* Columna de texto */
+            .letras {
+            flex: 1;
+            text-align: justify;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            min-width: 300px;
+            }
+
+            /* Imagen */
+            .I2 img {
+            height: 100%;
+            max-height: 400px;
+            width: auto;
+            border-radius: 8px;
+            display: block;
+            object-fit: cover;
+            }
+
+            /* Contenedor de imagen */
+            .I2 {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            }
+
+            /* Responsive: en pantallas pequeñas apila el contenido */
+            @media screen and (max-width: 768px) {
+            .contenido {
+                flex-direction: column;
+                align-items: center;
+                text-align: justify;
+            }
+
+            .I2 img {
+                width: 100%;
+                height: auto;
+                max-height: none;
+            }
+
+            .letras {
+                padding: 10px;
+                text-align: justify;
+            }
+
+        }
+
+
+                                                                    /* IMAGENES DE GIRO */
+
+          a {
+            text-decoration: none;
+        }
+        
+        .contenedor {
+            max-width: 1200px;
+            margin:50px auto;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .contenedor_tarjeta {
+            margin: 20px;
+        
+        }
+        
+        .contenedor_tarjeta a {
+            display: inline-block;
+        }
+        
+        .contenedor_tarjeta:hover figure {
+            transform: perspective(600px) rotateY(180deg);
+            -webkit-box-shadow: 0px 2px 10px 2px black;
+            -moz-box-shadow: 0px 2px 10px 2px black;
+            box-shadow: 0px 2px 10px 2px black;
+        }
+        
+        
+        .contenedor_tarjeta:hover figure img {
+            /*  al girar */
+            filter:blur(200px);
+        }
+        
+        figure {
+            width: 300px;
+            height: 350px;
+            margin:0;
+            position: relative;
+            transition: all ease .5s;
+            transform-style: preserve-3d;
+            transform: perspective(600px) rotateY(0deg);
+        }
+        
+        figure .frontal,
+        figure .trasera {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            transition: all ease .5s;
+        }
+        
+        
+        figure .frontal {
+            display: block;
+            background: black;
+            /* oculta la imagen al dar la vuelta */
+            backface-visibility: hidden;
+        
+        }
+        
+        
+        figure .trasera {
+            position: absolute;
+            top: 0;
+            padding: 20px;
+            color: white;
+            transform: perspective(600px) rotateY(180deg);
+            backface-visibility: hidden;
+            overflow: auto;
+            
+        }
+        .contenedor_tarjeta:nth-child(1) figure .trasera{
+          background: rgba(223,234,241,0.7);
+          background: -moz-linear-gradient(top, rgba(223,234,241,0.7) 0%, rgba(15,99,144,1) 100%);
+          background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(223,234,241,0.7)), color-stop(100%, rgba(15,99,144,1)));
+          background: -webkit-linear-gradient(top, rgba(223,234,241,0.7) 0%, rgba(15,99,144,1) 100%);
+          background: -o-linear-gradient(top, rgba(223,234,241,0.7) 0%, rgba(15,99,144,1) 100%);
+          background: -ms-linear-gradient(top, rgba(223,234,241,0.7) 0%, rgba(15,99,144,1) 100%);
+          background: linear-gradient(to bottom, rgba(223,234,241,0.7) 0%, rgba(15,99,144,1) 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dfeaf1', endColorstr='#0f6390', GradientType=0 );
+        }
+        
+        .contenedor_tarjeta:nth-child(2) figure .trasera{
+            background: rgba(80, 226, 35, 0.7);
+            background: -moz-linear-gradient(top, rgba(80, 226, 35, 0.7) 0%, rgba(25,44,72,1) 100%);
+            background: -webkit-gradient(left top, left bottom, color-stop(0%rgba(80, 226, 35, 0.7)), color-stop(100%, rgba(25,44,72,1)));
+            background: -webkit-linear-gradient(top, rgba(80, 226, 35, 0.7) 0%, rgba(25,44,72,1) 100%);
+            background: -o-linear-gradient(top, rgba(80, 226, 35, 0.7) 0%, rgba(25,44,72,1) 100%);
+            background: -ms-linear-gradient(top,rgba(80, 226, 35, 0.7) 0%, rgba(25,44,72,1) 100%);
+            background: linear-gradient(to bottom, rgba(80, 226, 35, 0.7) 0%, rgba(25,44,72,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbe8ca', endColorstr='#192c48', GradientType=0 );
+        }
+        
+        
+        .contenedor_tarjeta:nth-child(3) figure .trasera{
+            background: rgba(95,58,53,0.7);
+            background: -moz-linear-gradient(top, rgba(95,58,53,0.7) 0%, rgb(47, 179, 168) 100%);
+            background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(95,58,53,0.7)), color-stop(100%, rgb(47, 179, 168)));
+            background: -webkit-linear-gradient(top, rgba(95,58,53,0.7) 0%, rgb(47, 179, 168) 100%);
+            background: -o-linear-gradient(top, rgba(95,58,53,0.7) 0%, rgb(47, 179, 168) 100%);
+            background: -ms-linear-gradient(top, rgba(95,58,53,0.7) 0%,rgb(47, 179, 168)100%);
+            background: linear-gradient(to bottom, rgba(95,58,53,0.7) 0%, rgb(47, 179, 168) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5f3a35', endColorstr='#dd202f', GradientType=0 );
+        }
+
+        .contenedor_tarjeta:nth-child(4) figure .trasera{
+            background: rgba(95,58,53,0.7);
+            background: -moz-linear-gradient(top, rgba(34, 121, 172, 0.534) 0%, rgb(47, 179, 168) 100%);
+            background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0, 195, 255, 0.7)), color-stop(100%, rgb(47, 179, 168)));
+            background: -webkit-linear-gradient(top, rgba(0, 195, 255, 0.7) 0%, rgb(47, 179, 168) 100%);
+            background: -o-linear-gradient(top, rgba(0, 195, 255, 0.7) 0%, rgb(47, 179, 168) 100%);
+            background: -ms-linear-gradient(top, rgba(0, 195, 255, 0.7) 0%,rgb(47, 179, 168)100%);
+            background: linear-gradient(to bottom, rgba(0, 195, 255, 0.7) 0%, rgb(47, 179, 168) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5f3a35', endColorstr='#dd202f', GradientType=0 );
+        }
+        .contenedor_tarjeta:nth-child(5) figure .trasera{
+            background: rgba(80, 226, 35, 0.7);
+            background: -moz-linear-gradient(top, rgba(80, 226, 35, 0.7) 0%, rgba(0, 195, 255, 0.7) 100%);
+            background: -webkit-gradient(left top, left bottom, color-stop(0%rgba(80, 226, 35, 0.7)), color-stop(100%, rgba(0, 195, 255, 0.7)));
+            background: -webkit-linear-gradient(top, rgba(80, 226, 35, 0.7) 0%, rgba(0, 195, 255, 0.7) 100%);
+            background: -o-linear-gradient(top, rgba(80, 226, 35, 0.7) 0%, rgba(0, 195, 255, 0.7) 100%);
+            background: -ms-linear-gradient(top,rgba(80, 226, 35, 0.7) 0%, rgba(0, 195, 255, 0.7) 100%);
+            background: linear-gradient(to bottom, rgba(80, 226, 35, 0.7) 0%, rgba(0, 195, 255, 0.7) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbe8ca', endColorstr='#192c48', GradientType=0 );
+        
+        }
+        
+        figure .trasera .titulo {
+          color: #fff;
+          font-weight: normal;
+          margin-bottom: 20px;
+          font-family: 'Roboto', sans-serif;
+          font-size: 24px;
+        
+        }
+        
+        
+        figure .trasera hr {
+          height: 2px;
+          background: #fff;
+          border: none;
+          margin-bottom: 20px;
+          opacity: .5;
+        }
+        
+        
+        figure .trasera p {
+          color: black;
+          font-family: 'Open Sans', sans-serif;
+          line-height: 22px;
+          font-size: 14px;
+        }
+        
+        
+        @media screen and (max-width: 992px) { 
+            figure {
+                transform: none !important; /* Evita que el figure rote */
+            }
+            
+            figure .trasera {
+                position: relative;
+                transform: none !important; /* Quita la rotación */
+                backface-visibility: visible !important; /* Para que se vea */
+                box-shadow: none !important; /* Opcional para eliminar sombra */
+            }
+            
+            figure .frontal {
+                backface-visibility: visible !important;
+            }
+            
+            .contenedor_tarjeta:hover figure {
+                transform: none !important; /* No gira al hacer hover */
+                box-shadow: none !important;
+            }
+        }
+
+
+
+
+
+
+
+        
